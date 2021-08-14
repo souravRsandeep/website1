@@ -1,0 +1,725 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    /* for smooth scrolling */
+    scroll-behavior: smooth;
+}
+
+/* start styling */
+/* navbar...ie for the the header of webpage. */
+.navbar {
+    background: #000000;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* navbar container , for aranging the text in nav bar..ie header.*/
+.navbar__container{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin:  0 auto;
+    padding: 0 50px;
+}
+
+
+/* navbar logo..to style the logo..ie COLOUR. */
+.navbar__logo{
+    font-size: 50px;
+    /* background-image: linear-gradient(#7b4397,#dc2430); */
+    background: linear-gradient(to right,#7b4397,#dc2430);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    display: flex;
+    align-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding-left: 1rem;
+    padding-top: 2rem;
+}
+
+/* navbar menu...for home */
+.navbar__menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+/* navbar item for #about*/
+.navbar__item{
+    height: 80px;
+    align-items: center;
+    list-style: none;
+    padding-left: 2rem;
+}
+
+/* navbar links */
+.navbar__links{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    height: 100%;
+    width: 125px;
+}
+
+/* navbar button */
+.navbar__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2rem;
+    width: 100%;
+}
+.button {
+    display: flex;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: linear-gradient(to right,#7b4397,#dc2430);
+    font-weight: bold;
+    transition: all 0.3 ease;
+}
+
+/* for adding the hover feature. */
+.navbar__links:hover {
+    color: orchid;
+    transition: all 0.3 ease;
+}
+.button:hover{
+    color: lightblue;
+    transition: all 0.3 ease;
+}
+
+@media screen and (max-width: 960px) {
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 1;
+        transition: a 0.5s ease;   
+        z-index: -1;      
+    }
+
+    .navbar__menu.active {
+        background: black;
+        top: 100%;
+        opacity: 1;
+        transition: a 0.5s ease; 
+        z-index: 99;  
+        height: 60hv;
+        font-size: 1.6rem;
+    }
+
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3 ease-in-out;
+        background: #fff;
+    }
+
+    .navbar__item {
+        width: 100%;
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    .navbar__btn {
+        padding-bottom: 2rem;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: 80px;
+        margin: 0;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar__toggle .bar{
+        display: block;
+        cursor: pointer;
+    }
+
+    /* drop down menu effect those 3 white dashes */
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+        scroll-behavior: smooth;
+    }
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        scroll-behavior: smooth;
+    }
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        scroll-behavior: smooth;
+    }
+}
+
+
+/* hero section styling */
+
+.hero {
+    background: black;
+    /* background: linear-gradient(to right, #7b4397,#dc2430); */
+    padding: 200px 0;
+}
+
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 90%;
+    text-align:center;
+    padding: 30px;
+}
+
+.hero__heading {
+    font-size: 100px;
+    margin-bottom: 24px;
+    color: white;
+    text-decoration: none;
+}
+/* styling choose your colour */
+.hero__heading span{
+    background: #FF416C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C); 
+    background: linear-gradient(to right, #FF4B2B, #FF416C); 
+
+    /* to wrap the text with colour */
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* hover feature */
+.hero__heading:hover{
+    color: tomato;
+    transition: all 0.3 ease;
+}
+
+/* styling unlimited possibilities */
+.hero__description {
+    font-size: 60px;
+    margin-bottom: 24px;
+    color: white;
+    text-decoration: none;
+    background: #a8ff78;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);
+    background: linear-gradient(to right, #78ffd6, #a8ff78);
+
+    /* to wrap the text with colour */
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.highlight {
+    border-bottom: 4px solid rgb(132, 0, 255)
+}
+
+@media screen and (max-width: 768PX) {
+    .hero__heading {
+        font-size: 60px;
+    }
+
+    .hero__description {
+        font-size: 40px;
+    }
+}
+
+
+/* about section */
+.main {
+    background-color: rgb(12, 12, 12);
+    padding: 10rem 0;
+}
+
+.main__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    height: 90%;
+    margin: 0 auto;
+    z-index: 1;
+    width: 100%;
+    padding: 0 50px;
+    max-width: 1300px;
+}
+
+.main__content {
+    color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+.main__content h1{
+    font-size: 50px;
+    background-image: linear-gradient(#15a9d6,#16d6a6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    margin-bottom: 32px
+}
+
+.main__content h2{
+    font-size: 2rem;
+    /* styling unlimited possibilities */
+    margin-bottom: 24px;
+    color: white;
+    text-decoration: none;
+    background: #ff78b0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #33da12, #e2510d);
+    background: linear-gradient(to right, #740fd3, #a8ff78);
+
+    /* to wrap the text with colour */
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main__content p{
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* styling the NEON btn */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+.neon__btn {
+    font-size: 3rem;
+    top: 20PX;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px;
+    margin-top: 2rem;
+    padding: 20px 60PX;
+    text-decoration: none;
+    /* border colour */
+    border: #ff0077 4px solid;
+    /* neon effect */
+    box-shadow: inset 0 0 1px 0 #ff0077,
+    0 0 0.5em 0 #ff0077;
+    /* to wrap the text with colour */
+    background: #ff0077;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.neon__btn::after{
+    position: absolute;
+    content: '';
+    /* positioning the shadow for main btn */
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 4px;
+    transition: all 0.35s;   
+}
+.neon__btn:hover::after{
+    width: 100%;
+    background: #ff0077;
+    -webkit-text-fill-color: #000000;
+}
+/* shadow */
+.neon__btn::before {
+    content: '';
+    position: absolute;
+    background: #ff0077;
+    /* positioning the shadow for main btn */
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    /* rotating object to replicate shadow */
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(2.9em);
+    opacity: 0.7;
+}
+
+
+
+/* styling the SCHEDULE btn */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/* styling SCHEDULE call button */
+.main_btn{
+    font-size: 1.8rem;
+    top: 20PX;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px;
+    margin-top: 2rem;
+    padding: 20px 60PX;
+    text-decoration: none;
+    /* border colour */
+    border: #ff0077 4px solid;
+    /* text colour */
+    background: linear-gradient(to right, #ff0077, #da299f, #ff0077);
+
+    text-shadow: 0 0 1em
+    hsl(0 0 100% / 0.5), 0 0 0.125em currentColor;
+
+    box-shadow: inset 0 0 1px 0 #ff0077,
+    0 0 0.5em 0 #ff0077;
+    /* to wrap the text with colour */
+    -webkit-background-clip: text;
+       
+}
+.main_btn a {
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    color: #ff0077;
+}
+.main_btn::after{
+    position: absolute;
+    content: '';
+    /* positioning the shadow for main btn */
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 4px;
+    transition: all 0.35s;
+    background-color: #000000;
+}
+.main_btn:hover::after{
+    width: 100%;
+}
+
+
+.main__img--card {
+    text-align: center;
+}
+.main__img--card {
+    margin: 10px;
+    height: 500px;
+    width: 500px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    color: white;
+    background-image: linear-gradient(#15a9d6,#16d6a6);
+}
+
+.fa-layer-group,
+.fa-users {
+    font-size: 14rem;
+}
+
+#card-2 {
+    background: #ff512f;
+    background-image: -webkit-linear-gradient(#15d6ac,#d61686);
+    background-image: linear-gradient(#15a9d6,#16d6a6);
+}
+
+/* mobile responsiveness */
+@media screen  and (max-width: 1100px){
+    .main__container {
+
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        height: 90%;
+    }
+
+    .main__img--card{
+        height: 424px;
+        width: 425px;
+    }
+
+    .main__content h1 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+    .main__content h2 {
+        font-size: 3rem;
+    }
+    .main__content p {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    @media screen and(max-width: 480px) {
+        .main__img--card {
+            width: 250px;
+            height: 250px;
+        }
+    }
+/* icons */
+    .fa-users, .fa-layer-group {
+        font-size: 4rem;
+    }
+    .main__content h1 {
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+    .main__content h2 {
+        font-size: 2rem;
+    }
+    .main__content p {
+        /* font-size: 1.rem; */
+        margin-top: 2rem;
+    }
+    .main_btn {
+        padding: 12px 36px;
+        margin: 2.5rem 0;
+    }
+}
+
+
+/* styling SERVICES section */
+
+.services {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    z-index: 1;
+    height: 100%;
+    padding: 10rem 0;
+}
+.services h1 {
+    font-size: 2.5rem;
+    /* background-image: linear-gradient(#7b4397,#dc2430); */
+    background: linear-gradient(to right,#7b4397,#dc2430,#ff0077);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+}
+.services__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+.services__card {
+    margin: 10px;
+    height: 425px;
+    width: 300px;
+    display: flex;
+    border-radius: 4px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-image: linear-gradient(to right, #15a9d6,#16d6a6);
+    transition: 0.3s ease-in;
+}
+/* adding colour to cards */
+.services__card:nth-child(2) {
+    background: #3494E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.services__card:nth-child(3){
+    background: #C02425;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.services__card:nth-child(4){
+    background: #00F260;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+/* styling card */
+.services__card h2{
+    text-align: center;
+}
+.services__card p{
+    text-align: center;
+    margin-top: 24px;
+    font-size: 20px;
+}
+.services__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+.services__card button {
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 4px;
+    background: #000000;
+    font-size: 1rem;
+}
+
+/* to add hover feature */
+.services__card button:hover{
+    cursor: pointer;
+}
+.services__card:hover{
+    transform: scale(1.075);
+    transition: 0.3s ease-in;
+    cursor: pointer;
+}
+/* media screen we use to wrap all the cards into the screen */
+@media screen and (max-width: 1300px) {
+    .services__wrapper {
+        /* 1fr 1fr meaning it shows 2 cards per coloumn */
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 768px) {
+    .services__wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* footer css */
+.footer__container {
+    display: flex;
+    justify-content: center;
+    padding: 0=5rem 0;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+#footer__logo {
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-align: none;
+    text-decoration: none;
+    font-size: 2rem;                                                                                                                                                                             
+
+}
+
+.footer__links {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+.footer__links--wrapper {
+    display: flex;
+
+}
+.footer__links--items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 16px;
+    text-align: left;
+    width: 160px;
+    box-sizing: border-box;
+
+}
+
+.footer__links--items h2 {
+    margin-bottom: 16px;
+    color: white;
+}
+
+.footer__links--items a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+.footer__links--items a:hover {
+    color: white;
+    transition: 0.3 ease-out;
+
+}
+
+/* social icon */
+.social__icon--link {
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+}
+.social__media {
+    max-width: 1000px;
+    width: 100%;
+}
+
+
+.social__media--wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+
+}
+.social__icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+
+}
